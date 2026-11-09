@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101622" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101622'/%3E%3Cpath d='M18 48V16h8l20 20V16h8v32h-8L26 28v20z' fill='%23c9f16a'/%3E%3C/svg%3E" />
+  <title>Neon Coast — Open City Drive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <main id="game">
+    <canvas id="scene" aria-label="3D open city driving game"></canvas>
+    <div class="vignette"></div>
+    <div id="hud" class="hud hidden">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark">N</span><div><b>NEON COAST</b><small>FREE ROAM · LOS SANTOS BAY</small></div></div>
+        <div class="wanted"><span class="wanted-label">WANTED</span><div id="stars" class="stars">✦ ✦ ✦ ✦ ✦</div></div>
+        <button id="pauseBtn" class="icon-btn" aria-label="Pause game">Ⅱ</button>
+      </header>
+      <div class="left-stack">
+        <div class="mission-card"><div class="eyebrow"><i></i> STREET RUNNER <span>01</span></div><b id="missionTitle">A little night drive</b><p id="missionCopy">Find the glowing marker and keep moving.</p><div class="mission-progress"><span id="progressFill"></span></div><div class="progress-label"><span id="progressText">0 / 5 CHECKPOINTS</span><span>REWARD <b>$2,500</b></span></div></div>
+        <div class="map-card"><div class="map-head">VESPUCCI BEACH <span>GPS <i></i></span></div><div class="minimap"><div class="map-grid"></div><div class="map-road horizontal"></div><div class="map-road vertical"></div><div class="map-road diagonal"></div><div class="map-player"></div><div class="map-target"></div></div><div class="map-foot"><span>◉&nbsp; <b id="streetName">PACIFIC BLVD</b></span><span id="distance">1.2 mi</span></div></div>
+      </div>
+      <div class="right-stack"><div class="money-card"><small>BANK</small><b id="money">$12,450</b><span>↗&nbsp; +$0</span></div><div class="speed-card"><div class="speed-top"><span>WEST COAST</span><span id="gear">D</span></div><div class="speed-number"><b id="speed">000</b><small>MPH</small></div><div class="speed-line"><i id="speedFill"></i></div></div></div>
+      <div class="toast" id="toast"><span>✦</span><b>CHECKPOINT</b><small>Keep the pace</small></div>
+      <div class="bottom-hint"><span class="keycap">W A S D</span> DRIVE <span class="hint-divider">·</span><span class="keycap">SPACE</span> HANDBRAKE <span class="hint-divider">·</span> <span class="keycap">R</span> RESET</div>
+      <div class="touch-controls" aria-label="Touch driving controls"><button class="touch steer" data-control="left" aria-label="Steer left">‹</button><button class="touch steer" data-control="right" aria-label="Steer right">›</button><button class="touch brake" data-control="brake" aria-label="Brake">BRAKE</button><button class="touch gas" data-control="gas" aria-label="Accelerate">GAS <span>▲</span></button></div>
+      <div class="mobile-pause"><button class="icon-btn" id="mobilePause" aria-label="Pause">Ⅱ</button></div>
+    </div>
+    <section id="intro" class="overlay">
+      <div class="intro-copy"><div class="intro-kicker"><span></span> A CITY THAT NEVER SLEEPS</div><h1>NEON<br><em>COAST</em></h1><p>THE NIGHT IS YOURS.</p><div class="intro-meta"><span>OPEN CITY DRIVE</span><i></i><span>LOS SANTOS BAY, 11:48 PM</span></div></div>
+      <div class="intro-panel"><div class="panel-line"></div><div class="panel-kicker">YOUR CITY. YOUR RULES.</div><h2>Take the long way<br>home.</h2><p>Hit the streets, weave through traffic, and chase the checkpoints. No map boundaries. Just the coast and the open road.</p><button class="play-btn" id="playBtn"><span>START DRIVING</span><b>↗</b></button><div class="control-note"><span>⌨</span> WASD / ARROWS <i>OR</i> TOUCH CONTROLS</div></div>
+      <div class="intro-footer"><span>◉&nbsp; FREE ROAM MODE</span><span>THREE-DIMENSIONAL CITY EXPERIENCE <b>01 / 01</b></span></div>
+      <div class="sun-orb"></div>
+    </section>
+    <section id="pauseScreen" class="overlay pause-screen hidden"><div class="pause-box"><div class="panel-kicker">NEON COAST</div><h2>TAKE A<br><em>BREATHER.</em></h2><p>THE CITY WILL WAIT.</p><button class="play-btn" id="resumeBtn"><span>BACK TO THE ROAD</span><b>↗</b></button><div class="pause-help">WASD / ARROWS TO DRIVE&nbsp; · &nbsp;SPACE TO DRIFT</div></div></section>
+    <div class="loading" id="loading"><div class="loading-logo">N</div><span>BUILDING YOUR CITY</span><i><b></b></i></div>
+  </main>
+  <script type="module" src="/src/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "neon-coast-drive",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node ${RUNTIME_DIR}/scripts/default-start.mjs",
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "vite": "^7.2.2"
+  }
+}
